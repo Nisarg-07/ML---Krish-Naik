@@ -1,1 +1,2 @@
-# Complete Machine learning, NLP Bootcamp, MLOps and deployment with krish naik
+# Complete Machine learning, NLP Bootcamp, MLOps and deployment with krish naik series
+
