@@ -1,0 +1,23 @@
+SELECT * from dbo.Employees
+
+SELECT * into #copy_employees FROM dbo.Employees
+
+SELECT * FROM #copy_employees
+
+
+UPDATE #copy_employees
+SET Department = 'HR' WHERE EmployeeID = 7
+
+SELECT * FROM #copy_employees
+
+
+UPDATE #copy_employees 
+SET Department = 'Maintenance', Salary= 45000 , HireDate= '2020-06-09' WHERE FirstName = 'Dhruv'
+
+UPDATE #copy_employees 
+SET  Salary= 60000 , HireDate= '2020-11-09' WHERE Department ='HR'
+
+UPDATE #copy_employees 
+SET  Department = 'Marketing' WHERE EmployeeID = 9
+
+SELECT * from #copy_employees

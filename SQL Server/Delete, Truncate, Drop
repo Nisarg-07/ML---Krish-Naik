@@ -1,0 +1,18 @@
+SELECT * FROM dbo.Employees
+
+SELECT * INTO #2 FROM dbo.Employees
+
+SELECT * FROM #2
+
+-- Delete is used when we want to remove specific entry
+DELETE FROM #2
+WHERE Department= null or LastName = '0'
+
+
+-- Truncate is used when we want to remove all the records
+TRUNCATE TABLE #2
+
+
+-- DROP is used to remove the entire table
+DROP TABLE #2
+

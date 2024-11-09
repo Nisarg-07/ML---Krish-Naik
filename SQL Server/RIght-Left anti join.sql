@@ -1,0 +1,13 @@
+SELECT * FROM dbo.Table_1
+SELECT * FROM dbo.Table_2
+
+-- SELECT B.C1, B.C2, A.C3 FROM Table_2 [A] RIGHT JOIN Table_1 [B] ON A.C1 = B.C1 
+
+-- SELECT B.C1, B.C2, A.C3 FROM Table_2 [A] RIGHT JOIN Table_1 [B] ON A.C1 = B.C1 WHERE A.C3 is NULL
+
+-- SELECT A.C1, A.C2, B.C3 FROM Table_1 [A] LEFT JOIN Table_2 [B] ON A.C1 = B.C1
+
+SELECT A.C1, A.C2, B.C3 FROM Table_1 [A] LEFT JOIN Table_2 [B] ON A.C1 = B.C1 
+
+SELECT A.C1, A.C2, B.C3 FROM Table_1 [A] LEFT JOIN Table_2 [B] ON A.C1 = B.C1 WHERE B.C3 is NULL
+

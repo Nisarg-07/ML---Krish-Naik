@@ -1,0 +1,5 @@
+SELECT * FROM Table_1
+SELECT * FROM Table_2
+
+
+SELECT A.C1,A.C2,B.C3 FROM Table_1 [A] LEFT JOIN Table_2 [B] on A.C1 =B.C1

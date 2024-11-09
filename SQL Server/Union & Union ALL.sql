@@ -1,0 +1,49 @@
+USE [Sales Database]
+
+CREATE Table append1(c1 int, c2 nvarchar(255),c3 int)
+insert into append1 VALUES(1,'A',7),
+(2,'A',8),
+(3,'A',9),
+(4,'A',9)
+
+CREATE Table append2(c1 int, c2 nvarchar(255),c3 int)
+insert into append2 VALUES(11,'A',17),
+(2,'A',8),
+(33,'A',93),
+(44,'A',94)
+
+SELECT * FROM dbo.append1
+
+SELECT * FROM dbo.append2
+
+
+--------- RULES 
+
+-- NUMBER OF COLUMN HAS TO BE SAME IF UNION/UNION ALL IS USED 
+-- DATA TYPES OF THE COLUMNS HAS TO BE SAME 
+-- ORDER IN WHICH THE COLUMN ARE WRITTEN HAS TO BE THE SAME 
+
+
+-- UNION 
+
+-- II WILL REMOVE ALL THE DUPLICATE RECORDS MERGE THE TABLE 
+
+SELECT c1,c2,c3 FROM append1
+UNION
+SELECT c1,c2,c3 FROM append2
+
+--------- UNION ALL
+
+-- IT WILL NOT REMOVE THE DUPLICATE RECORDS AND MERGE THE ENTIRE TABLES WITH EACH EATRY 
+
+SELECT c1,c2,c3 FROM append1
+UNION ALL
+SELECT c1,c2,c3 FROM append2
+
+
+-- ALIASE PROVIDED IN THE FIRST SELECT STATEMENT WILL BE ASSIGN TO THE COLUMNS
+
+SELECT c1 [Column 1],c2 [Column 2],c3 [Column 3] FROM append1
+UNION ALL
+SELECT c1 [Col 1],c2 [Col 2],c3 [Col 3] FROM append2
+

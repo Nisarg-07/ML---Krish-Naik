@@ -1,0 +1,99 @@
+SELECT * 
+FROM Customers
+
+--- LENGTH
+
+SELECT CustomerName,LEN(CustomerName) [Length]
+FROM Customers 
+ORDER BY Length
+
+--- UPPPER
+
+SELECT CustomerName,Upper(CustomerName) 
+FROM Customers 
+
+SELECT CustomerName,Upper(CustomerName) 
+FROM Customers 
+
+-- TRIM, Left Trim, Right Trim
+
+SELECT TRIM('    AB   ')
+SELECT LTRIM('    AB   ')
+SELECT RTRIM('    AB   ')
+
+-- LEFT 
+
+SELECT CustomerName,LEFT(CustomerName,2) 
+FROM Customers 
+
+-- RIGHT
+SELECT CustomerName,RIGHT(CustomerName,2) 
+FROM Customers 
+
+
+-- SUBSTRING 
+
+SELECT CustomerName, SUBSTRING(CustomerName,2,4)
+FROM Customers
+
+-- REPLACE 
+
+SELECT CustomerName , REPLACE(CustomerName,'a','p')
+FROM Customers
+
+-- CHARINDEX
+
+SELECT CustomerName, CHARINDEX('a',CustomerName)
+FROM Customers
+
+-- Concat
+
+SELECT CONCAT(CustomerName,' ',CustomerID)
+FROM Customers
+GO
+
+
+
+
+
+--- PROCEDURE 
+
+
+CREATE PROCEDURE Country_USA
+AS
+BEGIN
+    SELECT * 
+    FROM Customers 
+    WHERE Country = 'USA';
+END;
+EXEC Country_USA
+GO
+SELECT C.CustomerID, ProductName,Price 
+FROM Customers [C] 
+INNER JOIN Orders [O] 
+ON C.CustomerID = O.CustomerID 
+INNER JOIN Products [P]
+ON O.ProductID = P.ProductID
+WHERE C.CustomerID = 1
+GO
+
+CREATE PROCEDURE Price_product @CustomerID INT
+AS
+BEGIN
+    SELECT C.CustomerID, ProductName,Price 
+    FROM Customers [C] 
+    INNER JOIN Orders [O] 
+    ON C.CustomerID = O.CustomerID 
+    INNER JOIN Products [P]
+    ON O.ProductID = P.ProductID
+    WHERE C.CustomerID = @CustomerID
+END;
+
+EXEC Price_product @CustomerID = 1
+
+EXEC Country_USA
+
+--- Trigger and Events 
+
+
+

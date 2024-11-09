@@ -1,0 +1,14 @@
+-- Single line comment
+
+
+
+-- Multi line comment 
+
+/* 
+Hi 
+We Are Venom
+*/
+
+
+
+SELECT TOP 5 FirstName, Salary FROM dbo.Employees 

@@ -1,0 +1,24 @@
+SELECT * FROM dbo.Employees
+
+-- Inserting Not null value
+
+INSERT INTO dbo.Employees
+VALUES(9,'Harsh','Mishra','',46000,'2020-03-09')
+
+INSERT INTO dbo.Employees
+VALUES(10,'Parth','0','Mechanical',64000,'2020-02-09')
+
+INSERT INTO dbo.Employees (EmployeeID,FirstName,LastName)
+VALUES(11,'Dhruv','Patel')
+
+
+-- Displaying Null Entries 
+
+SELECT * FROM dbo.Employees WHERE Department is NULL
+
+
+-- Displaying not Null entries 
+
+SELECT * FROM dbo.Employees WHERE not Department is NULL
+
+
